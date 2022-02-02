@@ -1,4 +1,5 @@
-//fetch statement for amazon API
+// fetch statement for amazon API //
+
 fetch("https://amazon-products1.p.rapidapi.com/search?country=US&query=MacBook%2BPro&page=1", {
 	"method": "GET",
 	"headers": {
@@ -12,3 +13,22 @@ fetch("https://amazon-products1.p.rapidapi.com/search?country=US&query=MacBook%2
 .then (function (data){
 	console.log(data);
 });
+
+
+
+// fetch statemtn for Walmart API //
+
+fetch("https://walmart2.p.rapidapi.com/search?query=xiaomi", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "walmart2.p.rapidapi.com",
+		"x-rapidapi-key": "42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10"
+	}
+})
+.then(function (response){
+	return response.json();
+})
+.then (function (data){
+	console.log(data);
+});
+
