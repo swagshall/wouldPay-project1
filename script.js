@@ -1,33 +1,34 @@
+// fetch statement for amazon API //
 
-// Fetch Statements for NewEgg API // https://rapidapi.com/ZombieBest/api/newegg-products/ //
-
-fetch("https://newegg-products.p.rapidapi.com/product?url=https%253A%252F%252Fwww.newegg.com%252Fasus-geforce-rtx-3080-tuf-rtx3080-o10g-gaming%252Fp%252FN82E16814126452&itemno=N82E16814126452", {
+fetch("https://amazon-products1.p.rapidapi.com/search?country=US&query=MacBook%2BPro&page=1", {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-host": "newegg-products.p.rapidapi.com",
+		"x-rapidapi-host": "amazon-products1.p.rapidapi.com",
+		"x-rapidapi-key": "47388dc074msh8f2434201e3f0d0p12cfd8jsnd9b2a609b60a"
+	}
+})
+.then(function (response){
+	return response.json();
+})
+.then (function (data){
+	console.log(data);
+});
+
+
+
+// fetch statemtn for Walmart API //
+
+fetch("https://walmart2.p.rapidapi.com/search?query=xiaomi", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "walmart2.p.rapidapi.com",
 		"x-rapidapi-key": "42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10"
 	}
 })
-.then(response => {
-	console.log(response);
+.then(function (response){
+	return response.json();
 })
-.catch(err => {
-	console.error(err);
+.then (function (data){
+	console.log(data);
 });
 
-// Fetch Statements for Zombie Bestbuy API // https://rapidapi.com/ZombieBest/api/bestbuy-products/ //
-
-
-fetch("https://bestbuy-products.p.rapidapi.com/product?url=https%253A%252F%252Fwww.bestbuy.com%252Fsite%252Fpro-wireless-controller-for-nintendo-switch%252F5748618.p%253FskuId%253D5748618&sku=5748618", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "bestbuy-products.p.rapidapi.com",
-		"x-rapidapi-key": "42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
