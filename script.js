@@ -45,12 +45,13 @@ walmartSubmit.addEventListener('click', walmartFetch);
 // Fetch Statements  //
 
 // Amazon Fetch Function // 
-
+//varible for userinput for search
+var userInputAmazon = ""
 
 function amazonFetch (event){
 	event.preventDefault();
 	console.log('amazon');
-	fetch("https://amazon-products1.p.rapidapi.com/search?country=US&query=MacBook%2BPro&page=1", {
+	fetch("https://amazon-products1.p.rapidapi.com/search?country=US&query=" + userInputAmazon, {
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "amazon-products1.p.rapidapi.com",
