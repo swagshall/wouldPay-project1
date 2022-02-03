@@ -1,19 +1,31 @@
-
+:root{
+  --green: rgb(16,144,69);;
+  --font: 'Oswald', sans-serif;
+  --headBckgroud: rgb(252,237,198);
+}
 h1{
-    color: blueviolet;
+  font-family: 'Press Start 2P', cursive;
+  font-family: var(--font);
+
+}
+.jumbotron{
+  background-color: var(--headBckgroud);
+  color: var(--green);
+  font-family: var(--font);
+
+
+}
+.jumbotron p{
+  font-weight: bold;
 }
 .avatar {
     vertical-align: middle;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    border-radius: 40%;
   }
 
-  .footer {
-    color: black;
-    text-align: center;
-    width: 100%;
-}
+ 
 .card{
   padding: 0%;
   margin: 0%;
@@ -26,4 +38,28 @@ h1{
   flex: 2;
   width: 100%;
   margin-bottom: 5px;
+}
+#signInBtn{
+  margin-left: 90%;
+  background-color: var(--green);
+}
+#submitBtn{
+  background-color:  var(--green);
+}
+.card-header {
+ color:  var(--green);
+ font-family: var(--font);
+}
+.footer {
+  background-color: var(--headBckgroud);
+  font-family: var(--font);
+  color: var(--green);
+  text-align: center;
+  width: 100%;
+}
+
+.footer a{
+  color: var(--green);
+  text-align: center;
+  text-decoration: none;
 }
