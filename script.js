@@ -1,46 +1,93 @@
 // // fetch statement for amazon API //
+var productContainer = document.querySelector("#card-container");
+var amazonQuery = document.querySelector("#product");
+var submitBtn = document.querySelector("#submit-btn");
+var userOutput = [];
+var productName = document.querySelector('#productName');
 
-// var amazonURL = 'https://amazon-products1.p.rapidapi.com/search?country=US&query=MacBook%2BPro&page=1';
+console.log(amazonQuery);
 
-// fetch(amazonURL, {
+var amazonFetch = function(event){
+	event.preventDefault();
+	console.log('hello')
+
+var amazonURL = 'https://amazon-products1.p.rapidapi.com/search?country=US&query=MacBook%2BPro&page=1';
+
+fetch(amazonURL, {
+	"method": "GET",
+	"headers": {
+  'x-rapidapi-host': 'amazon-products1.p.rapidapi.com',
+    'x-rapidapi-key': '42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10'
+	}
+})
+.then(function (response){
+	return response.json();
+})
+.then (function (data){
+	console.log(data);
+productName.textContent = data.results[0].
+
+});
+
+}
+
+var displayAmazonFetch = function(amazonQuery){
+	productContainer.textContent = "";
+	var productName = document.createElement("span");
+	productName.textContent = $('.card-text').text(data.results[0].title);
+	
+}
+
+
+var submitHandler = function (event){
+	event.preventDefault();
+	var userInput = amazonQuery.ariaValueMax.trim();
+	if (userInput){
+		amazonFetch(userInput);
+		userOutput.unshift({userInput});
+		userInput.value = "";
+	} else {
+		alert("Please enter a product name");
+	}
+	saveInput();
+}
+
+var saveInput= function(){
+	localStorage.setItem("userOutput", JSON.stringify(userOUtput))
+};
+
+submitBtn.addEventListener('click', amazonFetch);
+
+
+
+// fetch statement for Walmart API //
+      // Searching for AirPod Pros
+
+// var walmartURL = 'https://walmart2.p.rapidapi.com/search?query=airpods+pro';
+
+// fetch(walmartURL, {
 // 	"method": "GET",
 // 	"headers": {
-// 		 'x-rapidapi-host': 'amazon-products1.p.rapidapi.com',
-    'x-rapidapi-key': '42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10'
+// 		"x-rapidapi-host": "walmart2.p.rapidapi.com",
+// 		"x-rapidapi-key": "42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10"
 // 	}
 // })
 // .then(function (response){
 // 	return response.json();
 // })
 // .then (function (data){
+
 // 	console.log(data);
+//      console.log(data.items[0])  
+
+// 	 $('.card-text').text(data.items[0].custom);
+// 	 $('#product').text(data.items[0].brand);
+
+
+// /// All of the DOM manipul.atiion is going to happen in here //
+
+//     $('#descriptiion').text(data.items[0].description);
+
+ 
 // });
-
-
-
-// fetch statement for Walmart API //
-
-var walmartURL = 'https://walmart2.p.rapidapi.com/search?query=airpods+pro';
-
-fetch(walmartURL, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "walmart2.p.rapidapi.com",
-		"x-rapidapi-key": "42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10"
-	}
-})
-
-.then(function (response){
-	return response.json();
-})
-.then (function (data){
-	console.log(data);
-    console.log(data.items[0]);
-    $('.card-text').text(data.items[0].brand);
-    $('.card-text').text(data.items[0].description)
-
-});
-
-
-
 
