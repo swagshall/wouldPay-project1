@@ -5,8 +5,8 @@
 // fetch(amazonURL, {
 // 	"method": "GET",
 // 	"headers": {
-// 		"x-rapidapi-host": "amazon-products1.p.rapidapi.com",
-// 		"x-rapidapi-key": "47388dc074msh8f2434201e3f0d0p12cfd8jsnd9b2a609b60a"
+// 		 'x-rapidapi-host': 'amazon-products1.p.rapidapi.com',
+    'x-rapidapi-key': '42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10'
 // 	}
 // })
 // .then(function (response){
