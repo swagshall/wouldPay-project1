@@ -76,28 +76,52 @@
               <label class="form-label" for="product">Product:</label>
               <input name="product" id="product" type="text" autofocus="true" class="form-input" />
               <br>
+<<<<<<< HEAD
               <button type="submit" class="btn btn-primary">submit</button>
+=======
+              <button type="submit" class="btn" id=submitBtn>submit</button>
+>>>>>>> 0d163567ccb2f31886ed60574c157d707cc283a3
             </form>
           </div>
         </div>
       </div>
     </nav>
 
-    
-    <div class="card smallCard col-md-7" >
-      <img class="card-img-top" src="https://via.placeholder.com/350x150" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    
+    <!-- Product Cards -->
+
+    <!-- Amazon Card -->
 
     <div class="card smallCard col-md-7" >
-      <img class="card-img-top" src="https://via.placeholder.com/350x150" alt="Card image cap">
+      <img class="card-img-top" id="amazonImage" src="https://via.placeholder.com/350x150" alt="Card image cap">
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text">
+
+        <li> Product Name:  <span id="amazonName">        </span></li>
+        <li> Total Reviews:  <span id="amazonReviews">        </span></li>
+        <li> Stars:  <span id="amazonStars">        </span></li>
+
+
+        </p>
       </div>
     </div>
+    
+    <!-- Walmart Card -->
+
+    <div class="card smallCard col-md-7" >
+      <img class="card-img-top" id="walmartImage" src="https://via.placeholder.com/350x150" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">
+          <li> Product Name:  <span id="walmartName">        </span></li>
+        <li> Total Reviews:  <span id="walmartReviews">        </span></li>
+        <li> Stars:           <span id="walmartStars">        </span></li>
+        
+        </p>
+      
+      </div>
+    </div>
+
+<!-- End of Card Section  -->
+
     </div>
   </div>
     <br>
