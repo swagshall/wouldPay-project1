@@ -1,11 +1,30 @@
 // // fetch statement for amazon API //
 var productContainer = document.querySelector("#card-container");
-var amazonQuery = document.querySelector("#product");
-var submitBtn = document.querySelector("#submit-btn");
+var productSelect = document.querySelector("#product");
+var submitBtn = document.querySelector("#submitBtn");
 var userOutput = [];
-var productName = document.querySelector('#productName');
 
-console.log(amazonQuery);
+// Amazon Query Selectors //
+var amazonName = document.querySelector('#amazonName');
+var amazonReviews = document.querySelector('#amazonReviews');
+var amazonStars = document.querySelector('#amazonStars');
+var amazonImage = document.querySelector('#amazonImage');
+
+
+// Walmart Query Selectors //
+var walmartName = document.querySelector('#amazonName');
+var walmartReviews = document.querySelector('#amazonReviews');
+var walmartStars = document.querySelector('#amazonStars');
+var wlalmartmage = document.querySelector('#amazonImage');
+
+console.log(productContainer);
+console.log(productSelect);
+console.log(amazonName);
+console.log(amazonImage);
+console.log(walmartName);
+console.log(walmartStars);
+
+
 
 var amazonFetch = function(event){
 	event.preventDefault();
@@ -25,7 +44,7 @@ fetch(amazonURL, {
 })
 .then (function (data){
 	console.log(data);
-productName.textContent = data.results[0].
+amazonName.textContent = data.results[0].title;
 
 });
 
