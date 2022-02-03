@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <header class="hero">
+  <header class="hero" id="header">
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4"><img src="assets/imgs/goodAppleLogo1.jpg" alt="Avatar" class="avatar"> GoodApples</h1>
@@ -57,8 +57,9 @@
     
   </header>
 
-  
-  <main>
+  <!-- Changed main ID to CONTENT -->
+  <main id = "content">
+
     <div class="row">
     <nav id="sidebarMenu" class="sidebar col-md-3">
       <div class="position-sticky">
@@ -66,18 +67,22 @@
           <div class="card smallCard">
             <h3 class="card-header text-uppercase">Search By Product</h3>
             <form id="search-form" class="card-body">
+
               <!-- <label class="form-label" for="retailer">Retailer:</label>
               <select id="retailerChoice" name="choices">
                 <option value="amazon">Amazon</option>
                 <option value="walmart">Walmart</option>
               </select> -->
-              
               <br>
-              <label class="form-label" for="product">Product:</label>
-              <input name="product" id="product" type="text" autofocus="true" class="form-input" />
+              <label class="form-label" for="product">Amazon Product:</label>
+              <input name="product" id="amazonProduct" type="text" autofocus="true" class="form-input" />
               <br>
-              <button type="submit" class="btn btn-primary" id='submitBtn'>submit</button>
-
+              <button type="submit" class="btn btn-primary" id='submitBtn1'>submit</button>
+              <br>
+              <label class="form-label" for="product">Walmart Product:</label>
+              <input name="product" id="walmartProduct" type="text" autofocus="true" class="form-input" />
+              <br>
+              <button type="submit" class="btn btn-primary" id='submitBtn2'>submit</button>
             </form>
           </div>
         </div>

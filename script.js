@@ -1,46 +1,62 @@
-// // fetch statement for amazon API //
-var productContainer = document.querySelector("#card-container");
-var productSelect = document.querySelector("#product");
 
-var submitBtn = document.querySelector("#submitBtn");
-var userOutput = [];
+//Selector Statements - Large Page Elements //
+var content = document.querySelector("#content");
+var header = document.querySelector('#header');
 
-// Amazon Query Selectors //
+console.log(content);
+console.log(header);
+
+//Selector Statements for Side Bar - Amazon //
+var amazonSearch = document.querySelector("#amazonProduct");
+var amazonSubmit = document.querySelector('#submitBtn1');
+
+//Selector Statements for Side Bar - Walmart //
+var walmartSearch = document.querySelector("#walmartProduct");
+var walmartSubmit = document.querySelector('#submitBtn2');
+
+console.log(walmartSearch, walmartSubmit, amazonSearch, amazonSubmit);
+
+
+// Amazon Card Query Selectors //
 var amazonName = document.querySelector('#amazonName');
 var amazonReviews = document.querySelector('#amazonReviews');
 var amazonStars = document.querySelector('#amazonStars');
 var amazonImage = document.querySelector('#amazonImage');
 
-
-// Walmart Query Selectors //
-var walmartName = document.querySelector('#amazonName');
-var walmartReviews = document.querySelector('#amazonReviews');
-var walmartStars = document.querySelector('#amazonStars');
-var wlalmartmage = document.querySelector('#amazonImage');
+console.log(amazonName,amazonReviews,amazonStars,amazonImage);
 
 
-console.log(productContainer);
-console.log(productSelect);
-console.log(amazonName);
-console.log(amazonImage);
-console.log(walmartName);
-console.log(walmartStars);
+// Walmart Card Query Selectors //
+var walmartName = document.querySelector('#walmartName');
+var walmartReviews = document.querySelector('#walmartReviews');
+var walmartStars = document.querySelector('#walmartStars');
+var walmartImage = document.querySelector('#walmartImage');
+
+console.log(walmartName,walmartReviews,walmartStars,walmartImage);
+
+// End of Query Selectors//
+
+// Adding Event Handlers to Submit Buttions  //
+
+amazonSubmit.addEventListener('click', amazonFetch);
+walmartSubmit.addEventListener('click', walmartFetch);
 
 
+// Fetch Statements  //
 
-var amazonFetch = function(event){
+// Amazon Fetch Function // 
+
+
+function amazonFetch (event){
 	event.preventDefault();
-	console.log('hello')
-
-var amazonURL = 'https://amazon-products1.p.rapidapi.com/search?country=US&query=samsung';
-
-fetch(amazonURL, {
-	"method": "GET",
-	"headers": {
-  'x-rapidapi-host': 'amazon-products1.p.rapidapi.com',
-    'x-rapidapi-key': '42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10'
-	}
-})
+	console.log('amazon');
+	fetch("https://amazon-products1.p.rapidapi.com/search?country=US&query=MacBook%2BPro&page=1", {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "amazon-products1.p.rapidapi.com",
+			"x-rapidapi-key": "9473a74dfamshd8d87205311e913p1a7df2jsneb5c88b554ea"
+		}
+	})
 .then(function (response){
 	return response.json();
 })
@@ -51,70 +67,82 @@ amazonReviews.textContent = data.results[0].reviews.total_reviews;
 amazonStars.textContent= data.results[0].reviews.stars;
 amazonImage.setAttribute('src', data.results[0].image);
 
-
 });
-
 }
 
-// var displayAmazonFetch = function(amazonQuery){
-// 	productContainer.textContent = "";
-// 	var productName = document.createElement("span");
-// 	productName.textContent = $('.card-text').text(data.results[0].title);
+// Walmart Fetch Function //
+
+function walmartFetch(event) {
+	event.preventDefault();
+	console.log('walmart');
+
+	fetch("https://walmart2.p.rapidapi.com/search?query=airpods", {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "walmart2.p.rapidapi.com",
+			"x-rapidapi-key": "9473a74dfamshd8d87205311e913p1a7df2jsneb5c88b554ea"
+		}
+	})
+	.then(function (response){
+		return response.json();
+	})
+	.then (function (data){
+		console.log(data);
+walmartName.textContent = data.items[0].title;
+walmartReviews.textContent = data.items[0].numReviews;
+walmartStars.textContent= data.items[0].customerRating;
+walmartImage.setAttribute('src', data.items[0].imageUrl);
+
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// // var displayAmazonFetch = function(amazonQuery){
+// // 	productContainer.textContent = "";
+// // 	var productName = document.createElement("span");
+// // 	productName.textContent = $('.card-text').text(data.results[0].title);
 
 	
+// // }
+
+
+// var submitHandler = function (event){
+// 	event.preventDefault();
+// 	var userInput = amazonQuery.ariaValueMax.trim();
+// 	if (userInput){
+// 		amazonFetch(userInput);
+// 		userOutput.unshift({userInput});
+// 		userInput.value = "";
+// 	} else {
+// 		alert("Please enter a product name");
+// 	}
+// 	saveInput();
 // }
 
-
-var submitHandler = function (event){
-	event.preventDefault();
-	var userInput = amazonQuery.ariaValueMax.trim();
-	if (userInput){
-		amazonFetch(userInput);
-		userOutput.unshift({userInput});
-		userInput.value = "";
-	} else {
-		alert("Please enter a product name");
-	}
-	saveInput();
-}
-
-var saveInput= function(){
-	localStorage.setItem("userOutput", JSON.stringify(userOUtput))
-};
-
-submitBtn.addEventListener('click', amazonFetch);
+// var saveInput= function(){
+// 	localStorage.setItem("userOutput", JSON.stringify(userOUtput))
+// };
 
 
 
 
-// fetch statement for Walmart API //
-//       Searching for AirPod Pros
 
-var walmartURL = 'https://walmart2.p.rapidapi.com/search?query=airpods+pro';
-
-fetch(walmartURL, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "walmart2.p.rapidapi.com",
-		"x-rapidapi-key": "42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10"
-	}
-})
-.then(function (response){
-	return response.json();
-})
-.then (function (data){
-
-	console.log(data);
-     console.log(data.items[0])  
-
-	 $('.card-text').text(data.items[0].custom);
-	 $('#product').text(data.items[0].brand);
+// // fetch statement for Walmart API //
+// //       Searching for AirPod Pros
 
 
-/// All of the DOM manipul.atiion is going to happen in here //
 
-    $('#descriptiion').text(data.items[0].description);
 
- 
-});
 
+var userOutput = [];
+console.log(userOutput);
