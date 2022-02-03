@@ -72,12 +72,13 @@ amazonImage.setAttribute('src', data.results[0].image);
 }
 
 // Walmart Fetch Function //
-
+//userInput Walmart
+var userInputWalmart = "Macbook"
 function walmartFetch(event) {
 	event.preventDefault();
 	console.log('walmart');
 
-	fetch("https://walmart2.p.rapidapi.com/search?query=airpods", {
+	fetch("https://walmart2.p.rapidapi.com/search?query=" + userInputWalmart, {
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "walmart2.p.rapidapi.com",
