@@ -61,6 +61,34 @@ height:fit-content;
 }
 
 
+#selectable {
+display:  flex;
+flex-wrap: wrap;
+flex-direction: row;
+width: 100%;
+} 
+
+#selectable div {
+
+width: 200px;
+height: 200px;
+border: 2px black solid;
+
+}
+
+
+#selectable img {
+  width: 150px;
+  height: 150px;
+}
+
+#selectable h3 {
+
+text-align: center;
+
+}
+
+
 #signInBtn{
   margin-left: 90%;
   background-color: var(--green);
