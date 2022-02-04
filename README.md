@@ -15,5 +15,12 @@ So that I can better compare prices and decide where and what to buy based off p
 ## Mock-Up
 ![Screenshot]()
 
-##
-[Link to Deployed Page]()
+## Link
+Visit our website at: https://swagshall.github.io/wouldPay-project1/
+
+## Contact info
+For questions, comments, and contributions please contact us:
+
+<a href="https://github.com/AhMeDMuEEd"> Ahmed Mueed,  </a>
+<a href="https://github.com/llting592"> Lloyd Ting,   </a>
+<a href="https://github.com/swagshall"> Shifra Wagshall </a> 
