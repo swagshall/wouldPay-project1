@@ -113,13 +113,13 @@ let amazonTag = document.createElement('h5');
 
 
 newRating.textContent = "Rating: " + data.results[i].reviews.stars;
-newLink.setAttribute('href', data.results[i].reviews.full_link);
+newLink.setAttribute('href', data.results[i].full_link);
 newImage.setAttribute('src', data.results[i].image);
 amazonTag.textContent = "Amazon";
 
 newProduct.appendChild(newRating);
-newProduct.appendChild(newLink);
 newLink.appendChild(newImage);
+newProduct.appendChild(newLink);
 newProduct.appendChild(amazonTag);
 picGrid.appendChild(newProduct);
 
