@@ -138,7 +138,7 @@ function saveLastSearchAmazon(){
 
 //render last search
 function renderLastSearchAmazon(){
-	var lastSearchAmazonRender = JSON.parse(localStorage.getItem(lastSearchAmazon));
+	var lastSearchAmazonRender = JSON.parse(localStorage.getItem(amazonS));
 	if (lastSearchAmazonRender !== null){
 		document.getElementById("amazonProduct").innerHTML = lastSearchAmazonRender.amazonSearchArea;
 	} else {
@@ -201,6 +201,7 @@ newProduct.appendChild(walmartTag);
 picGrid.appendChild(newProduct)
 
 }
+renderLastSearchWalmart();
 	});
 }
 
@@ -212,6 +213,15 @@ function saveLastSearchWalmart(){
 	localStorage.setItem("walmartS", JSON.stringify(walmartS));
 };
 
+//render search function for Walmart
+function renderLastSearchWalmart(){
+	var lastSearchWalmartRender = JSON.parse(localStorage.getItem(walmartS));
+	if (lastSearchWalmartRender !== null){
+		document.getElementById("walmartProduct").innerHTML = lastSearchWalmartRender.walmartSearchArea;
+	} else {
+		return;
+	}
+}
 
 //fetch function for Otto
 var ottoS = [];
@@ -261,10 +271,11 @@ ottoProduct.appendChild(ottoTag);
 picGrid.appendChild(ottoProduct);
 }
 
-
+renderLastSearchOtto();
 	});
 	}
 
+//save to local storage for otto
 	function saveLastSearchOtto(){
 		console.log(ottoSearchArea);
 		var lastSearchOtto = ottoSearchArea.value;
@@ -272,7 +283,15 @@ picGrid.appendChild(ottoProduct);
 		localStorage.setItem("ottoS", JSON.stringify(ottoS));
 	};
 
-
+//render local storage
+function renderLastSearchOtto(){
+	var lastSearchOttoRender = JSON.parse(localStorage.getItem(ottoS));
+	if (lastSearchOttoRender !== null){
+		document.getElementById("ottoProduct").innerHTML = lastSearchOttoRender.ottoSearchArea;
+	} else {
+		return;
+	}
+}
 
 
 
