@@ -106,18 +106,22 @@ for (var i = 1; i < data.results.length; i++)
 {
 
 let newProduct = document.createElement('div');
-let newRating = document.createElement('h3');
+let newRating = document.createElement('h5');
 let newLink = document.createElement('a')
 let newImage = document.createElement('img');
+let amazonTag = document.createElement('h5');
 
-newRating.textContent = data.results[i].reviews.stars;
+
+newRating.textContent = "Rating: " + data.results[i].reviews.stars;
 newLink.setAttribute('href', data.results[i].reviews.full_link);
 newImage.setAttribute('src', data.results[i].image);
+amazonTag.textContent = "Amazon";
 
 newProduct.appendChild(newRating);
 newProduct.appendChild(newLink);
-newProduct.appendChild(newImage);
-picGrid.appendChild(newProduct)
+newLink.appendChild(newImage);
+newProduct.appendChild(amazonTag);
+picGrid.appendChild(newProduct);
 
 }
 renderLastSearchAmazon();
@@ -176,14 +180,19 @@ for (var i = 1; i < data.items.length; i++)
 {
 
 let newProduct = document.createElement('div');
-let newRating = document.createElement('h3');
+let newRating = document.createElement('h5');
 let newImage = document.createElement('img');
+let walmartTag = document.createElement('h5');
+
 
 newRating.textContent = 'Rating: ' + data.items[i].customerRating;
 newImage.setAttribute('src', data.items[i].imageUrl);
-newProduct.appendChild(newRating);
+walmartTag.textContent = "Walmart";
 
+newProduct.appendChild(newRating);
 newProduct.appendChild(newImage);
+newProduct.appendChild(walmartTag);
+
 picGrid.appendChild(newProduct)
 
 }
@@ -202,8 +211,8 @@ function ottoFetch (event){
 	fetch(ottoUrl , {
 		"method": "GET",
 		"headers": {
-			"x-rapidapi-host": "axesso-otto-data-service.p.rapidapi.com",
-			"x-rapidapi-key": "af077beecbmsha635137a0c28f34p15546fjsn39f9feb23650"
+			'x-rapidapi-host': 'axesso-otto-data-service.p.rapidapi.com',
+			'x-rapidapi-key': '42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10'
 		}
 	})
 	.then(function (response){
@@ -222,13 +231,17 @@ for (var i = 1; i < data.searchProductDetails.length; i++)
 {
 
 let ottoProduct = document.createElement('div');
-let ottoRating = document.createElement('h3');
+let ottoRating = document.createElement('h5');
 let ottoImage = document.createElement('img');
+let ottoTag = document.createElement('h5');
 
-ottoRating.textContent = data.searchProductDetails[i].productRating;
+ottoRating.textContent = "Rating: " + data.searchProductDetails[i].productRating;
 ottoImage.setAttribute('src', data.searchProductDetails[i].imgUrl);
+ottoTag.textContent = "Otto";
+
 ottoProduct.appendChild(ottoRating);
 ottoProduct.appendChild(ottoImage);
+ottoProduct.appendChild(ottoTag);
 picGrid.appendChild(ottoProduct);
 }
 

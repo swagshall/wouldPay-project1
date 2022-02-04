@@ -30,7 +30,7 @@ h1{
 
 main img {
  
-width: 250px;
+width: 200px;
 height: 200px;
 
 border: 4x solid black;
@@ -78,8 +78,8 @@ border: 2px black solid;
 
 
 #selectable img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 
 #selectable h3 {
