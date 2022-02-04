@@ -158,7 +158,7 @@ var walmartUrl = 'https://walmart2.p.rapidapi.com/search?query=' + walmartSearch
 fetch(walmartUrl, {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-host": "walmart2.p.rapidapi.com",
+	"x-rapidapi-host": "amazon-products1.p.rapidapi.com",
 		"x-rapidapi-key": "9473a74dfamshd8d87205311e913p1a7df2jsneb5c88b554ea"
 	}
 })
