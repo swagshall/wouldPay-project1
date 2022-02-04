@@ -1,10 +1,9 @@
 :root{
-  --green: rgb(16,144,69);;
+  --green: rgb(16,144,69);
   --font: 'Oswald', sans-serif;
   --headBckgroud: rgb(252,237,198);
 }
 h1{
-  font-family: 'Press Start 2P', cursive;
   font-family: var(--font);
 
 }
@@ -12,6 +11,7 @@ h1{
   background-color: var(--headBckgroud);
   color: var(--green);
   font-family: var(--font);
+  margin-top: 0%;
 
 
 }
@@ -93,12 +93,19 @@ text-align: center;
   margin-left: 90%;
   background-color: var(--green);
 }
-#submitBtn{
+#submitBtn1 {
+  background-color:  var(--green);
+}
+#submitBtn2 {
+  background-color:  var(--green);
+}
+#submitBtn3 {
   background-color:  var(--green);
 }
 .card-header {
  color:  var(--green);
  font-family: var(--font);
+ background-color: none;
 }
 .footer {
   background-color: var(--headBckgroud);
