@@ -155,8 +155,13 @@ function ottoFetch (event){
 
 
 
+//save function for Amazon
+var amazonSearches = [];
+var saveSearchAmazon = function(){
+	localStorage.setItem("amazonSearches", JSON.stringify(amazonSearches));
+}
 
-
+//
 
 
 
