@@ -1,4 +1,9 @@
 
+var picGrid = document.querySelector('#selectable');
+console.log(picGrid);
+
+
+
 //Selector Statements - Large Page Elements //
 var content = document.querySelector("#content");
 var header = document.querySelector('#header');
@@ -46,6 +51,11 @@ var ottoStars = document.querySelector('#ottoStars');
 var ottoPrice = document.querySelector('#ottoPrice');
 var ottoImage = document.querySelector('#ottoImage');
 
+
+
+
+
+
 console.log(walmartName,walmartReviews,walmartStars,walmartImage);
 
 // End of Query Selectors//
@@ -70,6 +80,7 @@ var amazonUrl = 'https://amazon-products1.p.rapidapi.com/search?country=US&query
 
 	event.preventDefault();
 	console.log('amazon');
+
 fetch(amazonUrl , {
 	"method": "GET",
 	"headers": {
@@ -87,6 +98,26 @@ amazonReviews.textContent = data.results[0].reviews.total_reviews;
 amazonStars.textContent= data.results[0].reviews.stars;
 amazonImage.setAttribute('src', data.results[0].image);
 amazonPrice.textContent = data.results[0].prices.current_price;
+
+for (var i = 1; i < data.results.length; i++)
+
+{
+
+let newProduct = document.createElement('div');
+let newRating = document.createElement('h3');
+let newLink = document.createElement('a')
+let newImage = document.createElement('img');
+
+newRating.textContent = data.results[i].reviews.stars;
+newLink.setAttribute('href', data.results[i].full_link);
+newImage.setAttribute('src', data.results[i].image);
+
+newProduct.appendChild(newRating);
+newLink.appendChild(newImage);
+newProduct.appendChild(newLink);
+picGrid.appendChild(newProduct)
+
+}
 
 });
 }
@@ -112,22 +143,39 @@ fetch(walmartUrl, {
 	})
 	.then (function (data){
 		console.log(data);
-		console.log('hello motto')
+		console.log('hello motto');
+
 walmartName.textContent = data.items[0].title;
 walmartReviews.textContent = data.items[0].numReviews;
 walmartStars.textContent= data.items[0].customerRating;
-walmartPrice.textContent = data.items[0].primaryOffer.maxPrice;
-
+walmartPrice.textContent = data.items[0].primaryOffer.offerPrice;
 walmartImage.setAttribute('src', data.items[0].imageUrl);
 
+for (var i = 1; i < data.items.length; i++)
+
+{
+
+let newProduct = document.createElement('div');
+let newRating = document.createElement('h3');
+let newImage = document.createElement('img');
+
+newRating.textContent = data.items[i].customerRating;
+newImage.setAttribute('src', data.items[i].imageUrl);
+newProduct.appendChild(newRating);
+
+newProduct.appendChild(newImage);
+picGrid.appendChild(newProduct)
+
+}
 	});
 }
+
+
 
 function ottoFetch (event){
 
 	let ottoSearch = ottoSearchArea.value;
 	var ottoUrl = "https://axesso-otto-data-service.p.rapidapi.com/ott/otto-search-by-keyword?keyword=" + ottoSearch + "&page=1&sortBy=topseller";
-	
 	
 		event.preventDefault();
 		console.log('otto');
@@ -145,23 +193,35 @@ function ottoFetch (event){
 		console.log(data);
 	ottoName.textContent = data.searchProductDetails[0].productDescription;
 	ottoReviews.textContent = data.searchProductDetails[0].countReview;
-	ottoStars.textContent= data.searchProductDetails[0].retailPrice;
-	ottoPrice.textContent= data.searchProductDetails[0].productRating;
+	ottoPrice.textContent = data.searchProductDetails[0].retailPrice;
+	ottoStars.textContent = data.searchProductDetails[0].productRating;
 	ottoImage.setAttribute('src', data.searchProductDetails[0].imgUrl);
-	
+
+for (var i = 1; i < data.searchProductDetails.length; i++)
+
+{
+
+let ottoProduct = document.createElement('div');
+let ottoRating = document.createElement('h3');
+let ottoImage = document.createElement('img');
+
+ottoRating.textContent = data.searchProductDetails[i].productRating;
+ottoImage.setAttribute('src', data.searchProductDetails[i].imgUrl);
+ottoProduct.appendChild(ottoRating);
+ottoProduct.appendChild(ottoImage);
+picGrid.appendChild(ottoProduct);
+}
+
+
 	});
 	}
 
 
 
 
-//save function for Amazon
-var amazonSearches = [];
-var saveSearchAmazon = function(){
-	localStorage.setItem("amazonSearches", JSON.stringify(amazonSearches));
-}
 
-//
+
+
 
 
 
