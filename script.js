@@ -86,8 +86,8 @@ var amazonUrl = 'https://amazon-products1.p.rapidapi.com/search?country=US&query
 fetch(amazonUrl , {
 	"method": "GET",
 	"headers": {
-			"x-rapidapi-host": "amazon-products1.p.rapidapi.com",
-		"x-rapidapi-key": "87aca8930emshd8497cbafc968aap1d9d5ajsndbc21fa64a25"
+			    'x-rapidapi-host': 'amazon-products1.p.rapidapi.com',
+    'x-rapidapi-key': '9473a74dfamshd8d87205311e913p1a7df2jsneb5c88b554ea'
 	}
 })
 .then(function (response){
