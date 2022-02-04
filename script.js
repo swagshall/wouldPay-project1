@@ -70,9 +70,11 @@ ottoSubmit.addEventListener('click', ottoFetch);
 
 // // Amazon Fetch Function // 
 
-
+var amazonS= [];
 
 function amazonFetch (event){
+
+	saveLastSearchAmazon();
 
 let amazonSearch = amazonSearchArea.value;
 var amazonUrl = 'https://amazon-products1.p.rapidapi.com/search?country=US&query=' + amazonSearch + '&page=1';
@@ -85,7 +87,7 @@ fetch(amazonUrl , {
 	"method": "GET",
 	"headers": {
 			"x-rapidapi-host": "amazon-products1.p.rapidapi.com",
-		"x-rapidapi-key": "af077beecbmsha635137a0c28f34p15546fjsn39f9feb23650"
+		"x-rapidapi-key": "87aca8930emshd8497cbafc968aap1d9d5ajsndbc21fa64a25"
 	}
 })
 .then(function (response){
@@ -118,8 +120,26 @@ newProduct.appendChild(newImage);
 picGrid.appendChild(newProduct)
 
 }
-
+renderLastSearchAmazon();
 });
+}
+
+//save to localstorage for amazon
+function saveLastSearchAmazon(){
+	console.log(amazonSearchArea);
+	var lastSearchAmazon = amazonSearchArea.value;
+	amazonS.push(lastSearchAmazon)
+	localStorage.setItem("amazonS", JSON.stringify(amazonS));
+};
+
+//render last search
+function renderLastSearchAmazon(){
+	var lastSearchAmazonRender = JSON.parse(localStorage.getItem(lastSearchAmazon));
+	if (lastSearchAmazonRender !== null){
+		document.getElementById("amazonProduct").innerHTML = lastSearchAmazonRender.amazonSearchArea;
+	} else {
+		return;
+	}
 }
 
 // // Walmart Fetch Function //
