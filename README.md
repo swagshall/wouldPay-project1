@@ -11,12 +11,18 @@ As an every day consumer
 I want to look at the reviews of products from various retailers
 So that I can better compare prices and decide where and what to buy based off prices and reviews from other consumers
 ```
-
-## Mock-Up
-![Screenshot]()
-
 ## Link
 Visit our website at: https://swagshall.github.io/wouldPay-project1/
+
+
+## Mock-Up
+<img src=".\assets\imgs\GoodAppleWireframe.png" alt="screenshot of wireframe">
+<!-- <img src=".\assets\imgs\goodAppleLogo1.jpg" alt="logo"> -->
+<img src=".\assets\imgs\goodApplesScreenShot1.png" alt="screenshot of website">
+<img src=".\assets\imgs\goodAppleCardScreenShot.png" alt="screenshot of product card">
+
+
+
 
 ## Contact info
 For questions, comments, and contributions please contact us:
