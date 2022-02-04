@@ -85,3 +85,6 @@ height:fit-content;
   text-align: center;
   text-decoration: none;
 }
+.form-input{
+  display: flex;
+}
