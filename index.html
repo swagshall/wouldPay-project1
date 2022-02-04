@@ -74,15 +74,21 @@
                 <option value="walmart">Walmart</option>
               </select> -->
               <br>
-              <label class="form-label" for="product">Amazon Product:</label>
+              <label class="form-label" for="product">Amazon Search:</label>
               <input name="product" id="amazonProduct" type="text" autofocus="true" class="form-input"  />
               <br>
               <button type="submit" class="btn btn-primary" id='submitBtn1'>submit</button>
               <br>
-              <label class="form-label" for="product">Walmart Product:</label>
+              <label class="form-label" for="product">Walmart Search:</label>
               <input name="product" id="walmartProduct" type="text" autofocus="true" class="form-input"  />
               <br>
               <button type="submit" class="btn btn-primary" id='submitBtn2'>submit</button>
+              <br>
+              <label class="form-label" for="product">Otto Search:</label>
+              <input name="product" id="ottoProduct" type="text" autofocus="true" class="form-input"  />
+              <br>
+              <button type="submit" class="btn btn-primary" id='submitBtn3'>submit</button>
+
             </form>
           </div>
         </div>
@@ -94,6 +100,7 @@
     <!-- Amazon Card -->
 
     <div class="card smallCard col-md-7" >
+      <h1 id="amazonTag">Amazon</h1>
       <img class="card-img-top" id="amazonImage" src="https://via.placeholder.com/350x150" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">
@@ -101,6 +108,8 @@
         <li> Product Name:  <span id="amazonName">        </span></li>
         <li> Total Reviews:  <span id="amazonReviews">        </span></li>
         <li> Stars:  <span id="amazonStars">        </span></li>
+        <li> Price:$ <span id="amazonPrice">        </span></li>
+
 
 
         </p>
@@ -110,12 +119,35 @@
     <!-- Walmart Card -->
 
     <div class="card smallCard col-md-7" >
+      <h1 id="walmartTag">WalMart</h1>
+
       <img class="card-img-top" id="walmartImage" src="https://via.placeholder.com/350x150" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">
           <li> Product Name:  <span id="walmartName">        </span></li>
         <li> Total Reviews:  <span id="walmartReviews">        </span></li>
         <li> Stars:           <span id="walmartStars">        </span></li>
+        <li> Price: $  <span id="walmartPrice">        </span></li>
+
+        
+        </p>
+      
+      </div>
+    </div>
+
+    <!-- Otto Card -->
+
+    <div class="card smallCard col-md-7" >
+      <h1 id="ottoTag">Otto</h1>
+
+      <img class="card-img-top" id="ottoImage" src="https://via.placeholder.com/350x150" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">
+          <li> Product Name:  <span id="ottoName">        </span></li>
+        <li> Total Reviews:  <span id="ottoReviews">        </span></li>
+        <li> Stars:           <span id="ottoStars">        </span></li>
+        <li> Price: $  <span id="ottoPrice">        </span></li>
+
         
         </p>
       

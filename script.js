@@ -14,12 +14,18 @@ var amazonSubmit = document.querySelector('#submitBtn1');
 var walmartSearchArea = document.querySelector("#walmartProduct");
 var walmartSubmit = document.querySelector('#submitBtn2');
 
+// Otto Selectors //
+
+var ottoSearchArea = document.querySelector('#ottoProduct')
+var ottoSubmit = document.querySelector('#submitBtn3')
+
 console.log(walmartSubmit, amazonSubmit);
 
 // Amazon Card Query Selectors //
 var amazonName = document.querySelector('#amazonName');
 var amazonReviews = document.querySelector('#amazonReviews');
 var amazonStars = document.querySelector('#amazonStars');
+var amazonPrice = document.querySelector('#amazonPrice');
 var amazonImage = document.querySelector('#amazonImage');
 
 console.log(amazonName,amazonReviews,amazonStars,amazonImage);
@@ -28,7 +34,17 @@ console.log(amazonName,amazonReviews,amazonStars,amazonImage);
 var walmartName = document.querySelector('#walmartName');
 var walmartReviews = document.querySelector('#walmartReviews');
 var walmartStars = document.querySelector('#walmartStars');
+var walmartPrice = document.querySelector('#walmartPrice');
 var walmartImage = document.querySelector('#walmartImage');
+
+
+// Otto Query Selectors //
+
+var ottoName = document.querySelector('#ottoName');
+var ottoReviews = document.querySelector('#ottoReviews');
+var ottoStars = document.querySelector('#ottoStars');
+var ottoPrice = document.querySelector('#ottoPrice');
+var ottoImage = document.querySelector('#ottoImage');
 
 console.log(walmartName,walmartReviews,walmartStars,walmartImage);
 
@@ -36,7 +52,7 @@ console.log(walmartName,walmartReviews,walmartStars,walmartImage);
 
 amazonSubmit.addEventListener('click', amazonFetch);
 walmartSubmit.addEventListener ('click', walmartFetch);
-
+ottoSubmit.addEventListener('click', ottoFetch);
 
 
 
@@ -70,6 +86,7 @@ amazonName.textContent = data.results[0].title;
 amazonReviews.textContent = data.results[0].reviews.total_reviews;
 amazonStars.textContent= data.results[0].reviews.stars;
 amazonImage.setAttribute('src', data.results[0].image);
+amazonPrice.textContent = data.results[0].prices.current_price;
 
 });
 }
@@ -99,12 +116,41 @@ fetch(walmartUrl, {
 walmartName.textContent = data.items[0].title;
 walmartReviews.textContent = data.items[0].numReviews;
 walmartStars.textContent= data.items[0].customerRating;
+walmartPrice.textContent = data.items[0].primaryOffer.maxPrice;
+
 walmartImage.setAttribute('src', data.items[0].imageUrl);
 
 	});
 }
 
+function ottoFetch (event){
 
+	let ottoSearch = ottoSearchArea.value;
+	var ottoUrl = "https://axesso-otto-data-service.p.rapidapi.com/ott/otto-search-by-keyword?keyword=" + ottoSearch + "&page=1&sortBy=topseller";
+	
+	
+		event.preventDefault();
+		console.log('otto');
+	fetch(ottoUrl , {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "axesso-otto-data-service.p.rapidapi.com",
+			"x-rapidapi-key": "af077beecbmsha635137a0c28f34p15546fjsn39f9feb23650"
+		}
+	})
+	.then(function (response){
+		return response.json();
+	})
+	.then (function (data){
+		console.log(data);
+	ottoName.textContent = data.searchProductDetails[0].productDescription;
+	ottoReviews.textContent = data.searchProductDetails[0].countReview;
+	ottoStars.textContent= data.searchProductDetails[0].retailPrice;
+	ottoPrice.textContent= data.searchProductDetails[0].productRating;
+	ottoImage.setAttribute('src', data.searchProductDetails[0].imgUrl);
+	
+	});
+	}
 
 
 
