@@ -109,12 +109,12 @@ let newLink = document.createElement('a')
 let newImage = document.createElement('img');
 
 newRating.textContent = data.results[i].reviews.stars;
-newLink.setAttribute('href', data.results[i].full_link);
+newLink.setAttribute('href', data.results[i].reviews.full_link);
 newImage.setAttribute('src', data.results[i].image);
 
 newProduct.appendChild(newRating);
-newLink.appendChild(newImage);
 newProduct.appendChild(newLink);
+newProduct.appendChild(newImage);
 picGrid.appendChild(newProduct)
 
 }
@@ -159,7 +159,7 @@ let newProduct = document.createElement('div');
 let newRating = document.createElement('h3');
 let newImage = document.createElement('img');
 
-newRating.textContent = data.items[i].customerRating;
+newRating.textContent = 'Rating: ' + data.items[i].customerRating;
 newImage.setAttribute('src', data.items[i].imageUrl);
 newProduct.appendChild(newRating);
 
