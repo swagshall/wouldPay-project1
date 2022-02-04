@@ -86,7 +86,7 @@ var amazonUrl = 'https://amazon-products1.p.rapidapi.com/search?country=US&query
 fetch(amazonUrl , {
 	"method": "GET",
 	"headers": {
-			    'x-rapidapi-host': 'amazon-products1.p.rapidapi.com',
+			  'x-rapidapi-host': 'amazon-products1.p.rapidapi.com',
     'x-rapidapi-key': '9473a74dfamshd8d87205311e913p1a7df2jsneb5c88b554ea'
 	}
 })
@@ -163,8 +163,8 @@ var walmartUrl = 'https://walmart2.p.rapidapi.com/search?query=' + walmartSearch
 fetch(walmartUrl, {
 	"method": "GET",
 	"headers": {
-	"x-rapidapi-host": "walmart2.p.rapidapi.com",
-		"x-rapidapi-key": "9473a74dfamshd8d87205311e913p1a7df2jsneb5c88b554ea"
+		'x-rapidapi-host': 'walmart2.p.rapidapi.com',
+		'x-rapidapi-key': '42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10'
 	}
 })
 .then(function (response){
