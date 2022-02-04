@@ -148,7 +148,12 @@ function renderLastSearchAmazon(){
 
 // // Walmart Fetch Function //
 
+var walmartS= [];
+
 function walmartFetch(event) {
+
+	saveLastSearchWalmart();
+
 	event.preventDefault();
 	console.log('walmart');
 
@@ -158,7 +163,7 @@ var walmartUrl = 'https://walmart2.p.rapidapi.com/search?query=' + walmartSearch
 fetch(walmartUrl, {
 	"method": "GET",
 	"headers": {
-	"x-rapidapi-host": "amazon-products1.p.rapidapi.com",
+	"x-rapidapi-host": "walmart2.p.rapidapi.com",
 		"x-rapidapi-key": "9473a74dfamshd8d87205311e913p1a7df2jsneb5c88b554ea"
 	}
 })
@@ -199,9 +204,20 @@ picGrid.appendChild(newProduct)
 	});
 }
 
+//save search function for Walmart
+function saveLastSearchWalmart(){
+	console.log(walmartSearchArea);
+	var lastSearchWalmart = walmartSearchArea.value;
+	walmartS.push(lastSearchWalmart)
+	localStorage.setItem("walmartS", JSON.stringify(walmartS));
+};
 
+
+//fetch function for Otto
+var ottoS = [];
 
 function ottoFetch (event){
+	saveLastSearchOtto();
 
 	let ottoSearch = ottoSearchArea.value;
 	var ottoUrl = "https://axesso-otto-data-service.p.rapidapi.com/ott/otto-search-by-keyword?keyword=" + ottoSearch + "&page=1&sortBy=topseller";
@@ -249,7 +265,12 @@ picGrid.appendChild(ottoProduct);
 	});
 	}
 
-
+	function saveLastSearchOtto(){
+		console.log(ottoSearchArea);
+		var lastSearchOtto = ottoSearchArea.value;
+		ottoS.push(lastSearchOtto)
+		localStorage.setItem("ottoS", JSON.stringify(ottoS));
+	};
 
 
 
