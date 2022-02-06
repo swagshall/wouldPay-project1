@@ -163,8 +163,8 @@ var walmartUrl = 'https://walmart2.p.rapidapi.com/search?query=' + walmartSearch
 fetch(walmartUrl, {
 	"method": "GET",
 	"headers": {
-		'x-rapidapi-host': 'walmart2.p.rapidapi.com',
-		'x-rapidapi-key': '42cf103a4fmsh68f4de9dafb003cp1f5e10jsn97190e2b7d10'
+	"x-rapidapi-host": "walmart2.p.rapidapi.com",
+		"x-rapidapi-key": "87aca8930emshd8497cbafc968aap1d9d5ajsndbc21fa64a25"
 	}
 })
 .then(function (response){
