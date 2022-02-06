@@ -164,7 +164,7 @@ fetch(walmartUrl, {
 	"method": "GET",
 	"headers": {
 	"x-rapidapi-host": "walmart2.p.rapidapi.com",
-		"x-rapidapi-key": "87aca8930emshd8497cbafc968aap1d9d5ajsndbc21fa64a25"
+		"x-rapidapi-key": "af077beecbmsha635137a0c28f34p15546fjsn39f9feb23650"
 	}
 })
 .then(function (response){
