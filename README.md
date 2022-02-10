@@ -14,6 +14,9 @@ So that I can better compare prices and decide where and what to buy based off p
 ## Link
 Visit our website at: https://swagshall.github.io/wouldPay-project1/
 
+## Technologies used
+HTML, CSS, Bootstrap, JavaScript, API's
+
 
 ## Mock-Up
 <img src=".\assets\imgs\GoodAppleWireframe.png" alt="screenshot of wireframe">
