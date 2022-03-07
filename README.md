@@ -13,6 +13,7 @@ So that I can better compare prices and decide where and what to buy based off p
 ```
 ## Link
 Visit our website at: https://swagshall.github.io/wouldPay-project1/
+For our code follow this link: https://github.com/swagshall/wouldPay-project1
 
 ## Technologies used
 HTML, CSS, Bootstrap, JavaScript, API's
